@@ -9,26 +9,28 @@
 %% Function Header
 function ETXtemp = CHKSUM(MSG)
 %Predefined (Speed Optimizations)
-L_MSG = length(MSG)
+L_MSG = length(MSG);
 MSGDec = zeros();
 
 %Convert to BIN
 j=0;
-for(i=1:1:length(MSG)
+for(i=1:L_MSG)
     MSGDec(i) = hex2dec(MSG(i));
     MSGBin(i+j:i+7+j) = decimalToBinaryVector(MSGDec(i),8,'MSBFirst'); 
     j=j+7;
 end
 
 %Speed Optimizations
-L_MSGBin = length(MSGBin)
-xorVec = zeros(L_MSGBin)
-ETXtemp = zeros(L_MSGBin)
+L_MSGBin = length(MSGBin);
+xorVec = zeros(L_MSGBin);
+ETXtemp = zeros(L_MSGBin);
 
 %Compute Checksum
 for (i=1:L_MSGBin)
-    ETXtemp(i) = xor(MSGBin(i),xorVec(i))
+    ETXtemp(i) = xor(MSGBin(i),xorVec(i));
 end
-
+L_MSGBin
 %Convert to HEX
-ETX = dec2hex(bi2de(ETXtemp,'right-msb'))
+temp = bi2de(ETXtemp(1:L_MSGBin),'right-msb')
+ETX = dec2hex(temp)
+end

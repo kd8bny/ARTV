@@ -18,11 +18,12 @@ clc,clear
 telegramCell = {};
 SPC = {'20'};
 STX = {'02','02','02','02'};
-ETX = {'B3'};
+
 %LMS requires user login (USRlvl & PSWRD)
 %predefined: (See INFO/command structure)
 CMDtype = {'73','4D','4E'};
 CMD = {'53','65','74','41','63','63','65','73','73','4D','6F','64','65'};
+ETX = CHKSUM(CMD);  %{'B3'};
 %Value for Authorized Client. See /Alt Values
 USRlvl = {'03'};
 PSWRD = {'F4','72','47','44'};
