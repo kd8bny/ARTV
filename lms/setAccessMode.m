@@ -45,7 +45,7 @@ telegramCell(28:31) = PSWRD(1:4);
 telegramCell(32) = {'B3'};  %Check Sum
 
 % Convert to BIN
-telegramDec2 = zeros(32);
+telegramDec2 = zeros(1,32);
 j=0;
 for(i=1:1:32)
     telegramDec2(i) = hex2dec(telegramCell(i));

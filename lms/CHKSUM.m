@@ -10,7 +10,7 @@
 function ETXtemp = CHKSUM(MSG)
 %Predefined (Speed Optimizations)
 L_MSG = length(MSG);
-MSGDec = zeros();
+MSGDec = zeros(1,L_MSG);
 
 %Convert to BIN
 j=0;
@@ -22,14 +22,14 @@ end
 
 %Speed Optimizations
 L_MSGBin = length(MSGBin);
-xorVec = zeros(L_MSGBin);
-ETXtemp = zeros(L_MSGBin);
+xorVec = zeros(1,L_MSGBin);
+ETXtemp = zeros(1,L_MSGBin);
 
 %Compute Checksum
 for (i=1:L_MSGBin)
     ETXtemp(i) = xor(MSGBin(i),xorVec(i));
 end
-L_MSGBin
+
 %Convert to HEX
 temp = bi2de(ETXtemp(1:L_MSGBin),'right-msb')
 ETX = dec2hex(temp)
