@@ -22,6 +22,5 @@ for(i=1:L_MSG)
     lastBin = xor(MSGBin,lastBin);
 end
 %Convert back to hex
-bi2de(lastBin,'left-msb')
-ETX = dec2hex(bi2de(lastBin,'left-msb'))
+ETX = dec2hex(bi2de(lastBin,'left-msb'));
 end
