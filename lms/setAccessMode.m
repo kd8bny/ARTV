@@ -28,14 +28,10 @@ CMD = {'53','65','74','41','63','63','65','73','73','4D','6F','64','65'};
 USRlvl = {'03'};
 PSWRD = {'F4','72','47','44'};
 
-MSGlength = dec2hex(length(CMDtype)+length(CMD)+2*length(SPC)+length(USRlvl)+length(PSWRD),2);
-%MSGLength = {'00','00','00',int2str(MSGlength)}
-
-
 %% Set Telegam
 % See: INFO/command structure
 telegramCell(1:4) = STX(1:4);
-telegramCell(5:8) = {'00','00','00','17'}; %Fix this
+telegramCell(5:8) = findLength(CMDtype,SPC,CMD,USRlvl,PSWRD);
 telegramCell(9:11) = CMDtype(1:3);
 telegramCell(12) = SPC(1);
 telegramCell(13:25) = CMD(1:13);
