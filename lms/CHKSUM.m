@@ -7,30 +7,21 @@
 %Caluclation by XOR each bit of MSG
 % MUST return HEX String cell array ~ie {'HEX'}
 %% Function Header
-function ETXtemp = CHKSUM(MSG)
+function ETX = CHKSUM(MSG)
 %Predefined (Speed Optimizations)
 L_MSG = length(MSG);
 MSGDec = zeros(1,L_MSG);
 
-%Convert to BIN
-j=0;
+%xor
+lastBin = 00000000; %for xor function first run
 for(i=1:L_MSG)
     MSGDec(i) = hex2dec(MSG(i));
-    MSGBin(i+j:i+7+j) = decimalToBinaryVector(MSGDec(i),8,'MSBFirst'); 
-    j=j+7;
+    %Grab 8'b
+    %MSGBin = decimalToBinaryVector(MSGDec(i),8,'MSBFirst');
+    MSGBin = de2bi(MSGDec(i),8,'left-msb');
+    lastBin = xor(MSGBin,lastBin);
 end
-
-%Speed Optimizations
-L_MSGBin = length(MSGBin);
-xorVec = zeros(1,L_MSGBin);
-ETXtemp = zeros(1,L_MSGBin);
-
-%Compute Checksum
-for (i=1:L_MSGBin)
-    ETXtemp(i) = xor(MSGBin(i),xorVec(i));
-end
-
-%Convert to HEX
-temp = bi2de(ETXtemp(1:L_MSGBin),'right-msb')
-ETX = dec2hex(temp)
+%Convert back to hex
+bi2de(lastBin,'left-msb')
+ETX = dec2hex(bi2de(lastBin,'left-msb'))
 end

@@ -23,7 +23,7 @@ STX = {'02','02','02','02'};
 %predefined: (See INFO/command structure)
 CMDtype = {'73','4D','4E'};
 CMD = {'53','65','74','41','63','63','65','73','73','4D','6F','64','65'};
-ETX = CHKSUM(CMD);  %{'B3'};
+%ETX = CHKSUM(CMD);  %{'B3'};
 %Value for Authorized Client. See /Alt Values
 USRlvl = {'03'};
 PSWRD = {'F4','72','47','44'};
@@ -42,13 +42,4 @@ telegramCell(13:25) = CMD(1:13);
 telegramCell(26) = SPC(1);
 telegramCell(27) = USRlvl(1);
 telegramCell(28:31) = PSWRD(1:4);
-telegramCell(32) = {'B3'};  %Check Sum
-
-% Convert to BIN
-telegramDec2 = zeros(1,32);
-j=0;
-for(i=1:1:32)
-    telegramDec2(i) = hex2dec(telegramCell(i));
-    telegram2(i+j:i+7+j) = decimalToBinaryVector(telegramDec2(i),8,'MSBFirst'); 
-    j=j+7;
-end
+telegramCell(32) = {CHKSUM(telegramCell(9:31))};  %Check Sum
