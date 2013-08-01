@@ -43,3 +43,31 @@ telegramCell(32) = {CHKSUM(telegramCell(9:31))};  %Check Sum
 telegramCell(5:8) = findLength(length(telegramCell(9:31)));
 
 %%now to send telegram
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Receiver
+%code receive based on LIDAR output 
+%for now using cell array
+%Default:
+telegramRX = {'02','02','02','02','00','00','00','13','73','41','4E','20','53','65','74','41','63','63','65','73','73','4D','6F','64','65','20','01','39'};
+
+% Preset
+Error = {'00'};
+Success = {'01'};
+RX_L = length(telegramRX);
+MSGRX_L = hex2dec(telegramRX(8));    %Grabs last value only
+%Grab "Change user level success"
+value = telegramRX(8+MSGRX_L);
+if(isequal(value,Error))
+    fprintf('Error in Change user level\n')
+else
+    fprintf('Success\n')
+end
+
+
+
+
+
+
+
+
