@@ -6,7 +6,7 @@
 
 %Notes: All binary (Could use HEX in future)
 %command structure:
-%[starttext][MSG length][CMD Type][SPC][CMD][SPC][USRlvl][PSWRD][CHKSUM]
+%[Start text][MSG length][CMD Type][SPC][CMD][SPC][USRlvl][PSWRD][CHKSUM]
 
 %% Alt Values
 %USRlvl: [02:Maintenance; 03:Auth Client; 04:Service]
