@@ -32,14 +32,10 @@ while(entry~=0)
         sWN_LMPoutputRange
     
     elseif(entry==5)
-        fprintf('Not wriiten yet')
-        %sMN_mEEwriteall
-        pause(1)
+        sMN_mEEwriteall
     
     elseif(entry==6)
-        fprintf('Not wriiten yet')
-        %sMN_Run
-        pause(1)
+        sMN_Run
     
     elseif(entry==7)
         fprintf('Try also sEM_**')
