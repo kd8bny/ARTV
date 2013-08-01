@@ -22,12 +22,12 @@ telegramCell = {};
 STX = {'02','02','02','02'};
 SPC = {'20'};
 
-%predefined: (See INFO/command structure)
+%Predefined: See INFO/command structure
 CMDtype = {'73','4D','4E'};
 CMD = {'6D','4C','4D','50','73','65','74','73','63','61','6E','63','66','67'};
 SFREQ = {'00','00','13','88'};
 RES = {'00','01'};
-ARES = {'00','00','13','88'};
+ARES = {'00','00','13','88'};   %If chaned read Alt Values
 STARTA = {'FF','F9','22','30'};
 STOPA = {'00','22','55','10'};
 

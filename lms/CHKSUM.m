@@ -15,7 +15,6 @@ MSGDec = zeros(1,L_MSG);
 %xor
 lastBin = 00000000; %for xor function first run
 for(i=1:L_MSG)
-    MSG(i)
     MSGDec = hex2dec(MSG(i));
     %Grab 8'b
     MSGBin = de2bi(MSGDec,8,'left-msb');

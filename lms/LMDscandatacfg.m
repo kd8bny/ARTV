@@ -32,7 +32,7 @@ SPC = {'20'};
 CMDtype = {'73','57','4E'};
 CMD = {'4C','4D','44','73','63','61','6E','64','61','74','61','63','66','67'};
 
-%Variables See: Info/Alt Values
+%Variables See: Alt Values
 dataCH = {'01','00'};
 REM = {'00'};
 RES = {'01'};
