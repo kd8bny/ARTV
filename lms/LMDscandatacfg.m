@@ -34,7 +34,7 @@ CMD = {'4C','4D','44','73','63','61','6E','64','61','74','61','63','66','67'};
 
 %Variables See: Info/Alt Values
 dataCH = {'01','00'};
-REM = {'00'};%Correct value?
+REM = {'00'};
 RES = {'01'};
 UNIT = {'00'};
 ENC = {'00','00'};
@@ -64,6 +64,6 @@ telegramCell(38) = time(1);
 telegramCell(39:40) = OUT(1:2);
 telegramCell(41) = {CHKSUM(telegramCell(9:40))};  %Check Sum
 
-telegramCell(5:8) = findLength(length(telegramCell(9:40)))
+telegramCell(5:8) = findLength(length(telegramCell(9:40)));
 
 %%now to send telegram
