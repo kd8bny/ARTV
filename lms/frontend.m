@@ -46,7 +46,6 @@ while(entry~=0)
         pause(1)
     end
     %Prep for new command
-    clc
     entry = 99;
     fprintf('Next Command?\n\n')
 end
