@@ -49,3 +49,45 @@ telegramCell(46) = {CHKSUM(telegramCell(9:45))};  %Check Sum
 telegramCell(5:8) = findLength(length(telegramCell(9:45)));
 
 %%now to send telegram
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Receiver
+%code receive based on LIDAR output 
+%for now using cell array
+%Default:
+telegramRX = {'02','02','02','02','00','00','00','26','73','41','4E','20','6D','4C','4D','50','73','65','74','73','63','61','6E','63','66','67','20','00','00','00','13','88','00','01','00','00','13','88','FF','F9','22','30','00','22','55','10','2D'};
+
+% Preset
+Success = {'00'};
+FREQError = {'01'};
+RESError = {'02'};
+RESscanError = {'03'};
+SCANError = {'04'};
+genError = {'05'};
+
+%Grab "Error"
+value = telegramRX(8+4+2+length(CMD)); %account for SPC & CMDtype 
+if(isequal(value,Success))
+    fprintf('Success\nLOGOUT to set values\n')
+elseif(isequal(value,FREQError))
+    fprintf('Error: Frequnecy\n')
+elseif(isequal(value,RESError))
+    fprintf('Error:Resolution\n')
+elseif(isequal(value,RESscanError))
+    fprintf('Error:Resolution and Scan\n')
+elseif(isequal(value,SCANError))
+    fprintf('Error:Scan Area\n')
+elseif(isequal(value,genError))
+    fprintf('Error: Ahhhhhhhh IDK! (gen error)\n')
+else
+    fprintf('Strange error....passedthrough if statement')
+end
+
+
+
+
+
+
+
+
+
