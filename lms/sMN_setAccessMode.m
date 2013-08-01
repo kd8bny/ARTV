@@ -40,6 +40,6 @@ telegramCell(27) = USRlvl(1);
 telegramCell(28:31) = PSWRD(1:4);
 telegramCell(32) = {CHKSUM(telegramCell(9:31))};  %Check Sum
 
-telegramCell(5:8) = findLength(length(telegramCell(9:31)))
+telegramCell(5:8) = findLength(length(telegramCell(9:31)));
 
 %%now to send telegram
