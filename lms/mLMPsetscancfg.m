@@ -10,7 +10,8 @@
 
 %% Alt Values
 %Scan Frequency: [0x9C4: 25Hz; 0x1388: 50Hz]
-%Angular Resoultion: [0x9C4: 25deg; 0x1388: 5deg]
+%Angular Resoultion: [0x9C4: 25deg; 0x1388: 5deg] %NOTE!!! If changed...
+%       CHANGE "LMPoutputRange"
 %Start Angle: [0xFF F9 22 30 to 0x00 22 55 10]
 %Stop Angle: [0xFF F9 22 30 to 0x00 22 55 10]
 
