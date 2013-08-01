@@ -15,7 +15,6 @@ telegramCell = {};
 STX = {'02','02','02','02'};
 SPC = {'20'};
 
-%LMS requires user login (USRlvl & PSWRD)
 %predefined: (See INFO/command structure)
 CMDtype = {'73','52','4E'};
 CMD = {'4C','43','4D','73','74','61','74','65'};
