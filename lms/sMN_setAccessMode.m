@@ -5,7 +5,7 @@
 %TODO: Make function
 
 %Notes: All binary (Could use HEX in future)
-%command structure:
+%Command Structure:
 %[Start text][MSG length][CMD Type][SPC][CMD][SPC][USRlvl][PSWRD][CHKSUM]
 
 %% Alt Values
@@ -20,7 +20,7 @@ STX = {'02','02','02','02'};
 SPC = {'20'};
 
 %LMS requires user login (USRlvl & PSWRD)
-%predefined: (See INFO/command structure)
+%Predefined: See INFO/Command Structure
 CMDtype = {'73','4D','4E'};
 CMD = {'53','65','74','41','63','63','65','73','73','4D','6F','64','65'};
 
@@ -40,6 +40,6 @@ telegramCell(27) = USRlvl(1);
 telegramCell(28:31) = PSWRD(1:4);
 telegramCell(32) = {CHKSUM(telegramCell(9:31))};  %Check Sum
 
-telegramCell(5:8) = findLength(length(telegramCell(9:31)));
+telegramCell(5:8) = findLength(length(telegramCell(9:31)))
 
 %%now to send telegram

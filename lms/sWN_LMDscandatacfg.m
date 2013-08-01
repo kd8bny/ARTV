@@ -5,7 +5,7 @@
 %TODO: Make function
 
 %Notes: All binary (Could use HEX in future)
-%command structure:
+%Command Structure:
 %[Start text][MSG length][CMDType][SPC][CMD][SPC][Data Channel]...
 %   [Remission][Resolution][Unit][Encoder][Position][Device Name]...
 %       [Comment][Time][Output Rate][CHKSUM]
@@ -23,12 +23,12 @@
 
 %% Setup
 clc,clear
-%Delclare telegram. See: INFO/command structure
+%Delclare telegram. See: INFO/Command Structure
 telegramCell = {};
 STX = {'02','02','02','02'};
 SPC = {'20'};
 
-%Predefined: (See INFO/command structure)
+%Predefined: See INFO/Command Structure
 CMDtype = {'73','57','4E'};
 CMD = {'4C','4D','44','73','63','61','6E','64','61','74','61','63','66','67'};
 
