@@ -43,6 +43,7 @@ telegramCell(32) = {CHKSUM(telegramCell(9:31))};  %Check Sum
 telegramCell(5:8) = findLength(length(telegramCell(9:31)));
 
 %%now to send telegram
+sendTelegram({telegramCell})
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Receiver
