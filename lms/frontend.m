@@ -14,7 +14,9 @@ fprintf('\nUse with LMS11x and LMS 15x \n')
 fprintf('For use instructions see README.MD\n\n')
 
 %Entry
+global udpstate entry
 entry = 99;
+udpstate = 0;
 
 while(entry~=0)
     fprintf('Commands:\n\t 1:Log in\n\t 2:Set Freq & Res\n\t 3:Configure Scan Content\n\t 4:Configure Scan Output\n\t 5:Store Parameters\n\t 6:Log out\n\t 7:Request Scan\n\n 0:QUIT\n')
