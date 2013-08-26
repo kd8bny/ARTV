@@ -10,10 +10,9 @@ function readT = sendTelegram (msg)
 global IP port
 echoudp('off')
 echoudp('on',2111)
-address = udp(IP, port, 'LocalPort', port)
+address = udp(IP, port);
 set(address,'Timeout',30);
 fopen(address);
-udpstate = 1;
 
 for i=1:length(msg)
     fwrite(address,msg{i})
