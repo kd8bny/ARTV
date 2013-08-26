@@ -7,14 +7,13 @@
 % Set IP and Port in front end
 %% Function Header
 function readT = sendTelegram (msg)
-global udpstate IP port
-if(udpstate==0)
-    echoudp('on',2111)
-    address = udp(IP, port, 'LocalPort', port);
-    set(address,'Timeout',30);
-    fopen(address);
-    udpstate = 1;
-end
+global IP port
+echoudp('off')
+echoudp('on',2111)
+address = udp(IP, port, 'LocalPort', port)
+set(address,'Timeout',30);
+fopen(address);
+udpstate = 1;
 
 for i=1:length(msg)
     fwrite(address,msg{i})
@@ -23,5 +22,4 @@ end
 
 fclose(address)
 echoudp('off')
-udpstate = 0;
 end
